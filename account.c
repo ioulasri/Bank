@@ -48,18 +48,18 @@ int check_acc(bank *head, char *name, int password)
  * @password: password of the account
  */
 
-void open_account(bank **head, char *name, int password)
+int open_account(bank **head, char *name, int password)
 {
     bank *check = *head;
     if (check_acc(check, name, password))
     {
         printf("Account already exists..\n");
-        return;
+        return 0;
     }
     if (check_password(check, password))
     {
         printf("Password is being used by another user please try another password...\n");
-        return;
+        return 0;
     }
 
     bank *new_account = malloc(sizeof(bank));
@@ -69,6 +69,7 @@ void open_account(bank **head, char *name, int password)
 
     new_account->next = *head;
     *head = new_account;
+    return 1;
 }
 
 /**
@@ -83,7 +84,7 @@ void display_account(bank *head)
 
     while (curr)
     {
-        printf("%d -> Account owner: %s | Account balance: %d$\n", i, curr->owner, curr->balance);
+        printf("%d -> Account owner: %s | Account balance: %d$ | Account password: %d\n", i, curr->owner, curr->balance, curr->password);
         curr = curr->next;
         i++;
     }
