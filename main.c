@@ -1,5 +1,13 @@
 #include "bank.h"
 
+/**
+ * welcome_bank - welcome the user to the bank
+ * @head: head of the list
+ * @name: name of the account
+ * @password: password of the account
+ * @op: operation to perform
+ */
+
 void welcome_bank(bank **head, char **name, int *password, int *op)
 {
     while (!(*name))
@@ -20,6 +28,11 @@ void welcome_bank(bank **head, char **name, int *password, int *op)
         }
     }
 }
+
+/**
+ * main - entry point
+ * Return: 0 on success
+ */
 
 int main()
 {
@@ -61,6 +74,6 @@ int main()
         }
         else
             printf("Invalid operation\n");
-
     }
+    return (0);
 }
