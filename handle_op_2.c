@@ -59,11 +59,12 @@ void handle_send_money(bank **head, char *name)
 
     if (from->balance < amount)
     {
-        printf("You don't have enough funds\n");
+        printf("You don't have enough money\n");
         return;
     }
     from->balance -= amount;
     to_send->balance += amount;
+    printf("Money sent successfully\n");
 }
 
 /**
@@ -127,4 +128,24 @@ void handle_log_out(char **name, int *password)
     free(*name);
     *name = NULL;
     password = 0;
+}
+
+void admin_prompt(bank *head)
+{
+    int op;
+    while (1)
+    {
+        printf("Current user: ADMIN\n");
+        printf("Choose an operation:\npress '0' to exit.\npress '1' to display all accounts\n>>");
+
+        scanf("%d", &op);
+
+        if (op == 0)
+        {
+            printf("Exiting...");
+            exit(1);
+        }
+        if (op == 1)
+            display_account(head);
+    }
 }

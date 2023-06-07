@@ -16,6 +16,8 @@ void handle_login(bank *head, char **name, int *password)
     printf("Enter your password: ");
     scanf("%d", &(*password));
 
+    if ((strcmp(*name, "ADMIN") == 0) && *password == 12345)
+        admin_prompt(head);
     if (check_acc(head, *name, *password))
     {
         printf("Logged in successfuly\n");
