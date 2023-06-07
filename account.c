@@ -1,5 +1,12 @@
 #include "bank.h"
 
+/**
+ * check_password - check if password is already in use
+ * @head: head of the list
+ * @password: password to check
+ * Return: 1 if password is in use, 0 otherwise
+ */
+
 int check_password(bank *head, int password)
 {
     bank *curr = head;
@@ -13,6 +20,14 @@ int check_password(bank *head, int password)
     return (0);
 }
 
+/**
+ * check_acc - check if account already exists
+ * @head: head of the list
+ * @name: name to check
+ * @password: password to check
+ * Return: 1 if account exists, 0 otherwise
+ */
+
 int check_acc(bank *head, char *name, int password)
 {
     bank *curr = head;
@@ -25,6 +40,13 @@ int check_acc(bank *head, char *name, int password)
     }
     return (0);
 }
+
+/**
+ * open_account - open a new account
+ * @head: head of the list
+ * @name: name of the account
+ * @password: password of the account
+ */
 
 void open_account(bank **head, char *name, int password)
 {
@@ -48,6 +70,11 @@ void open_account(bank **head, char *name, int password)
     new_account->next = *head;
     *head = new_account;
 }
+
+/**
+ * display_account - display all accounts
+ * @head: head of the list
+ */
 
 void display_account(bank *head)
 {
