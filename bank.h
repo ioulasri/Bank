@@ -13,7 +13,7 @@ typedef struct bank
     struct bank *next;
 } bank;
 
-void open_account(bank **head, char *name, int password);
+int open_account(bank **head, char *name, int password);
 int check_password(bank *head, int password);
 int check_acc(bank *head, char *name, int password);
 void display_account(bank *head);
@@ -26,5 +26,6 @@ void handle_check_balance(bank *head, char *name);
 void handle_change_password(bank **head, char *name);
 void handle_login(bank *head, char **name, int *password);
 void handle_log_out(char **name, int *password);
+void admin_prompt(bank *head);
 
 #endif /* BANK_H */
