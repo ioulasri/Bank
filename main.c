@@ -24,7 +24,12 @@ void welcome_bank(bank **head, char **name, int *password, int *op)
             scanf("%s", *name);
             printf("Enter your password: ");
             scanf("%d", password);
-            open_account(head, *name, *password);
+            if (!open_account(head, *name, *password))
+            {
+                printf("Failed to open account, try again.\n");
+                free(*name);
+                *name = NULL;
+            }
         }
     }
 }
