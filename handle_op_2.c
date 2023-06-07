@@ -1,5 +1,12 @@
 #include "bank.h"
 
+/**
+ * check_name - check if name is already in use
+ * @head: head of the list
+ * @name: name to check
+ * Return: 1 if name is in use, 0 otherwise
+ */
+
 int check_name(bank *head, char *name)
 {
     bank *curr = head;
@@ -12,6 +19,12 @@ int check_name(bank *head, char *name)
     }
     return (0);
 }
+
+/**
+ * handle_send_money - handle send money to another account
+ * @head: head of the list
+ * @name: name of the account
+ */
 
 void handle_send_money(bank **head, char *name)
 {
@@ -53,6 +66,12 @@ void handle_send_money(bank **head, char *name)
     to_send->balance += amount;
 }
 
+/**
+ * handle_check_balance - checks the balance
+ * @head: head of the list
+ * @name: name of the account
+ */
+
 void handle_check_balance(bank *head, char *name)
 {
     bank *curr = head;
@@ -68,6 +87,12 @@ void handle_check_balance(bank *head, char *name)
     }
     printf("A problem happend, sorry we will fix it soon\n");
 }
+
+/**
+ * handle_change_password - changes the password
+ * @head: head of the list
+ * @name: name of the account
+ */
 
 void handle_change_password(bank **head, char *name)
 {
@@ -90,6 +115,12 @@ void handle_change_password(bank **head, char *name)
     }
     printf("A problem happend, sorry we will fix it soon\n");
 }
+
+/**
+ * handle_log_out - logs out the user
+ * @name: name of the account
+ * @password: password of the account
+ */
 
 void handle_log_out(char **name, int *password)
 {
