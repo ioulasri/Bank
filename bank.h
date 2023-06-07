@@ -1,3 +1,6 @@
+#ifndef BANK_H
+#define BANK_H
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,3 +26,5 @@ void handle_check_balance(bank *head, char *name);
 void handle_change_password(bank **head, char *name);
 void handle_login(bank *head, char **name, int *password);
 void handle_log_out(char **name, int *password);
+
+#endif /* BANK_H */
