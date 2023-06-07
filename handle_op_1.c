@@ -1,5 +1,12 @@
 #include "bank.h"
 
+/**
+ * handle_login - handle login to an account
+ * @head: head of the list
+ * @name: name of the account
+ * @password: password of the account
+ */
+
 void handle_login(bank *head, char **name, int *password)
 {
     *name = malloc(sizeof(char) * 50);
@@ -19,6 +26,11 @@ void handle_login(bank *head, char **name, int *password)
     *name = NULL;
 }
 
+/**
+ * handle_open_account - handle open account
+ * @head: head of the list
+ */
+
 void handle_open_account(bank **head)
 {
     char *name;
@@ -31,6 +43,13 @@ void handle_open_account(bank **head)
     scanf("%d", &password);
     open_account(head, name, password);
 }
+
+/**
+ * handle_close_account - handle close account
+ * @head: head of the list
+ * @name: name of the account
+ * @password: password of the account
+ */
 
 void handle_close_account(bank **head, char *name, int password)
 {
@@ -49,6 +68,12 @@ void handle_close_account(bank **head, char *name, int password)
         curr = curr->next;
     }
 }
+
+/**
+ * handle_withdraw - handle withdraw money
+ * @head: head of the list
+ * @name: name of the account
+ */
 
 void handle_withdraw(bank **head, char *name)
 {
@@ -73,6 +98,12 @@ void handle_withdraw(bank **head, char *name)
         curr = curr->next;
     }
 }
+
+/**
+ * handle_deposit - handle deposit money
+ * @head: head of the list
+ * @name: name of the account
+ */
 
 void handle_deposit(bank **head, char *name)
 {
