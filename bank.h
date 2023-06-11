@@ -27,5 +27,7 @@ void handle_change_password(bank **head, char *name);
 void handle_login(bank *head, char **name, int *password);
 void handle_log_out(char **name, int *password);
 void admin_prompt(bank *head);
+void load_nodes(bank **head, char **name, int *password);
+void save_nodes(bank **head, char **name, int *password);
 
 #endif /* BANK_H */

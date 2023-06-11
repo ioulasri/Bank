@@ -45,17 +45,17 @@ int main()
     int op;
     char *name = NULL;
     int password;
-
+    load_nodes(&head, &name, &password);
     welcome_bank(&head, &name, &password, &op);
     while (name)
     {
         printf("Current user %s\n", name);
         printf("Choose an operation:\n1-Open account for family\n2-Close account\n3-Withdraw money\n4-Deposit money\n5-Send money\n6-Check balance\n7-Change password\n8-Log out\nOR press '0' to exit.\n>>");
         scanf("%d", &op);
-
         if (op == 0)
         {
             printf("Exiting...\n");
+            save_nodes(&head, &name, &password);
             exit(1);
         }
         else if (op == 1)
